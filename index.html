@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login TO KouvenKoro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mate&display=swap" rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+    </head>
+    <body onload="loaded()">
+        <small><span id="error" style="color: red; font-size: large; top: 10px;"></span></small>
+        <div class="container" id="room">
+            <button id="logout" class = "btn-danger" onclick="logout()"><img src="logout.jpg" alt="logout" width = "30" height="30">Logout</button>
+            <h1 id="welcomeuser"></h1>
+            <div class="sub-container">
+                <label class="addroom">#Add Room:</label>
+                <input class="input-box" type="text" id="room_name_kk" placeholder="#Room Name">
+                <button class="btn-head" onclick="addRoom()">#Add Room</button>
+                </div>
+                <h3 class="head">#TRENDINGROOMS</h3>
+                <div id="output"></div>
+        </div>
+        <div class="hero" id ="page">
+            <center>
+            <h1 class="header">	
+                KouvenKoro	
+                <sup>
+                    <img src="m.png">
+                </sup>
+            </h1>
+            <br>
+            <h3 class="sub-header">Login/Register page</h3>
+            </center>            
+            <div class="form-box">
+                <div class="btn-container">
+                    <div id="btn"></div>
+                    <button id="btn-login" class="toggle-button" type="button" onclick="login()">Login</button>
+                    <button id="btn-register" class="toggle-button" type="button" onclick="register()">Register</button>
+                </div>
+                <div id="login" class="input-grp">
+                    <input type="email" placeholder="Type Your Email" class="input-field" id="user_email_login" required>
+                    <br>
+                    <input type="password" placeholder="Type Your Password" class="input-field" id="user_password_login" required>
+                    <br>
+                    <input type="checkbox" class="chech-box"><div style="color: yellow; font-weight: bold; display: inline;">I agree to the Terms & Agreements</div>
+                    <br>&nbsp;&nbsp;
+                    <div style="padding-right: 100px;" onclick="forgotPassword()"><a style = "margin-right: 30px;" href="#">Forgot Password?</a></div>
+                    <br>
+                    <br>
+                    <button class="submit-btn" type = "submit" onclick="loginuser()" id="loginbtn">Log In</button>
+                </div>
+                <div id="register" class="input-grp">
+                    <input placeholder="Type Your UserId" class="input-field" id="user_name_register" required>
+                    <br>
+                    <input type="email" placeholder="Type Your Email" class="input-field" id="user_email_register" required>
+                    <br>
+                    <input type="password" placeholder="Type Your Password 'must not contain symbols'" class="input-field" id="user_password_register" required>
+                    <br>
+                    <br>
+                    <input type="checkbox" " class="chech-box"><div style="color: yellow; font-weight: bold; display: inline;">I agree to the Terms & Agreements</div>
+                    <br>
+                    <br>&nbsp;&nbsp;&nbsp;
+                    <button class="submit-btn" name="submit" type="submit" onclick="registeruser()">Register</button>
+                </div>
+            </div>
+            </div>
+            <script src="main.js"></script>
+
+</body>
+</html>
